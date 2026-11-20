@@ -5,6 +5,10 @@ CACHE MANIFEST
 CACHE:
 ../../../
 ../../../index.html
+../../../includes/assets/icons/facebook.svg
+../../../includes/assets/icons/phone.svg
+../../../includes/assets/icons/store.svg
+../../../includes/assets/icons/whatsapp.svg
 ../../../includes/assets/icons/cat-paw-btns.svg
 ../../../includes/assets/icons/cat-paw.svg
 ../../../includes/assets/icons/favicon.ico

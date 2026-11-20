@@ -6,6 +6,10 @@ CACHE:
 ../../../
 ../../../index.html
 ../../../exploit.html
+../../../includes/assets/icons/facebook.svg
+../../../includes/assets/icons/phone.svg
+../../../includes/assets/icons/store.svg
+../../../includes/assets/icons/whatsapp.svg
 ../../../includes/js/HENs.js
 ../../../includes/js/design.js
 ../../../includes/js/autoJbRetry.js
