@@ -32,12 +32,19 @@
                     <h2 style="color: white; font-size: 1.2rem; font-weight: bold; margin: 0; text-shadow: 2px 2px 8px #000;">01278566009</h2>
                 </div>
 
-                <!-- الشمال: الأيقونات -->
+                <!-- الشمال: الأيقونات وزرار الإعدادات -->
                 <div style="display: flex; flex-direction: row; gap: 15px; align-items: center;">
                     <a href="https://poodaa9.github.io/store/" target="_blank"><img src="./includes/assets/icons/store.svg" alt="Website" style="width: 35px; height: 35px;"></a>
                     <a href="https://wa.me/201278566009" target="_blank"><img src="./includes/assets/icons/whatsapp.svg" alt="WhatsApp" style="width: 35px; height: 35px;"></a>
                     <a href="https://www.facebook.com/PooDaaps" target="_blank"><img src="./includes/assets/icons/facebook.svg" alt="Facebook" style="width: 35px; height: 35px;"></a>
                     <a href="tel:01278566009"><img src="./includes/assets/icons/phone.svg" alt="Call" style="width: 35px; height: 35px;"></a>
+                    
+                    <button onclick="settingsPopup()" class="settings-btn" style="padding: 5px; border-radius: 50%; background: rgba(15, 23, 42, 0.6); border: 1px solid #3b82f6; cursor: pointer; margin-right: 15px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3b82f6" class="bi bi-gear" viewBox="0 0 16 16">
+                            <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+                            <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+                        </svg>
+                    </button>
                 </div>
             </header>
 
@@ -60,6 +67,7 @@
                 <p id="PS4FW" class="text-white/70 text-lg mt-4">-</p>
                 <p id="exploitChainLabel" class="text-white/70 text-lg mb-4">-</p>
             </div>
+            
             <a class="hidden secondHostBtn bg-blue-600 hover:bg-blue-700 p-3 rounded font-semibold disabled:opacity-50 transition-colors text-white text-center" href="https://poodaa9.github.io/store/" style="text-decoration: none;">
                 <button class="bg-blue-600 hover:bg-blue-700 p-3 rounded font-semibold disabled:opacity-50 transition-colors text-white text-center">Load payloads using a PayLoader - External link</button>
             </a>
@@ -132,22 +140,59 @@
         </section>
     </main>
 
-    <!-- Popups (مخفية عشان تمنع الإيرور) -->
-    <div style="display: none !important;">
-        <button id="close-settings"></button>
-        <button id="close-theme"></button>
-        <button id="close-about"></button>
-        <button id="close-fanChoose"></button>
-        <input type="checkbox" id="autoJb" checked>
-        <input type="checkbox" id="autoJbRetry">
-        <input type="checkbox" id="reloadAfterJbInput">
-        <input type="checkbox" id="bareboneJBInput">
-        <input type="checkbox" id="advancedPayloadsInput">
-        <select id="ps4FwSelect"><option value="9.00" selected>9.00</option></select>
-        <input type="text" id="ps4IpInput">
-        <input type="radio" name="hen2" value="GoldHEN" id="GoldHENInputExploit" checked>
-        <input type="radio" name="hen2" value="PS4HEN" id="PS4HENInputExploit">
-        <input type="radio" name="goldhen" value="GHv2.4b18.14" id="goldhen_v14">
+    <!-- Popups (شغالة في الخلفية ومخفية) -->
+    <div class="fixed inset-0 bg-black/50 z-50 flex backdrop-blur-sm items-center justify-center p-4 hidden" id="settings-popup-overlay">
+        <div id="settings-popup" class="bg-gray-800 p-6 rounded-lg shadow-xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
+            <h2 class="text-2xl font-bold mb-4">إعدادات بوده بلايستيشن</h2>
+            <div id="chooseGoldHEN" class="mb-4">
+                <h3 class="text-lg font-semibold mb-2" id="ghVer">إصدارات GoldHEN</h3>
+                <div class="radio-group space-y-2">
+                    <label class="flex items-center text-white/80"><input type="radio" name="goldhen" value="GHv2.4b18.14" onchange="setGoldHENVer(this.value);"><p>GoldHEN v2.4b18.14</p></label>
+                </div>
+            </div>
+            <div id="chooseExploitChain" class="mb-4">
+                <h3 class="text-lg font-semibold mb-2" id="exploitChainTitle">سلسلة الاستغلال</h3>
+                <div class="radio-group space-y-2 flex flex-wrap">
+                    <label class="flex items-center text-white/80"><input type="radio" name="exploitChain" value="0" onchange="exploitChain(this.value);"><p>PSFree Lapse Modular</p></label>
+                    <label class="flex items-center text-white/80"><input type="radio" name="exploitChain" value="1" onchange="exploitChain(this.value);"><p>PSFree Lapse Bundle</p></label>
+                    <label class="flex items-center text-white/80"><input type="radio" name="exploitChain" value="2" onchange="exploitChain(this.value);"><p>BadHoist</p></label>
+                    <label class="flex items-center text-white/80"><input type="radio" name="exploitChain" value="3" onchange="exploitChain(this.value);"><p>CSSFontFace Netctrl</p></label>
+                    <label class="flex items-center text-white/80"><input type="radio" name="exploitChain" value="4" onchange="exploitChain(this.value);"><p>CSSFontFace Lapse</p></label>
+                    <label class="flex items-center text-white/80"><input type="radio" name="exploitChain" value="5" onchange="exploitChain(this.value);"><p>Slopkit Lapse</p></label>
+                    <label class="flex items-center text-white/80"><input type="radio" name="exploitChain" value="6" onchange="exploitChain(this.value);"><p>Slopkit Netctrl</p></label>
+                    <label class="flex items-center text-white/80"><input type="radio" name="exploitChain" value="7" onchange="exploitChain(this.value);"><p>Slopkit Relapse</p></label>
+                    <label class="flex items-center text-white/80"><input type="radio" name="exploitChain" value="8" onchange="exploitChain(this.value);"><p>Bpf Double Free</p></label>
+                    <label class="flex items-center text-white/80"><input type="radio" name="exploitChain" value="9" onchange="exploitChain(this.value);"><p>Slopkit Afterglow</p></label>
+                    <label class="flex items-center text-white/80"><input type="radio" name="exploitChain" value="10" onchange="exploitChain(this.value);"><p>Wobkot lapse</p></label>
+                </div>
+            </div>
+            <div id="advancedPayloads" class="mb-6">
+                <h3 class="text-lg font-semibold mb-2" id="optionsHeader">خيارات</h3>
+                <label id="autoJbOption" class="flex items-center text-white/80"><input type="checkbox" id="autoJb" onclick="setAutoJb(this.checked)"><p>الجيلبريك التلقائي</p></label>
+            </div>
+            <button onclick="settingsPopup()" class="mt-6 w-full bg-blue-600 hover:bg-blue-700 p-3 rounded font-semibold transition-colors" id="close-settings">إغلاق</button>
+        </div>
+    </div>
+
+    <div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden" id="theme-popup-overlay">
+        <div id="theme-popup" class="bg-gray-800 p-6 rounded-lg shadow-xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
+            <h2 class="text-2xl font-bold mb-4">إعدادات التخصيص</h2>
+            <button onclick="themePopup()" class="mt-6 w-full bg-blue-600 hover:bg-blue-700 p-3 rounded font-semibold transition-colors" id="close-theme">إغلاق</button>
+        </div>
+    </div>
+    
+    <div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden" id="about-popup-overlay">
+        <div id="about-popup" class="bg-gray-800 p-6 rounded-lg shadow-xl w-full max-w-md">
+            <h2 class="text-2xl font-bold">حول بوده بلايستيشن</h2>
+            <button onclick="aboutPopup()" class="mt-6 w-full bg-blue-600 hover:bg-blue-700 p-3 rounded font-semibold transition-colors" id="close-about">إغلاق</button>
+        </div>
+    </div>
+
+    <div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden" id="choose-fanThreshold-overlay">
+        <div id="choose-fanThreshold" class="bg-gray-800 p-6 rounded-lg shadow-xl w-full max-w-md">
+            <h2 class="text-2xl font-bold mb-4">حد سرعة المروحة</h2>
+            <button onclick="chooseFanThreshold()" class="mt-4 w-full bg-blue-600 hover:bg-blue-700 p-3 rounded font-semibold transition-colors" id="close-fanChoose">إغلاق</button>
+        </div>
     </div>
 
     <script>
